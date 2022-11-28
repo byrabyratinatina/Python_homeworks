@@ -1,30 +1,27 @@
-def inputKoord(x):
-    a = [0] * x
-    for i in range(x):
-        is_OK = False
-        while not is_OK:
-            try:
-                number = float(input(f"Введите {i+1} координату: "))
-                a[i] = number
-                is_OK = True
-                if a[i] == 0:
-                    is_OK = False
-                    print("Координата не должно быть равна 0 ")
-            except ValueError:
-                print("Ты ошибся. Вводить надо числа!")
-    return a
+ x = int(input('Введите число x '))
+ y = int(input('Введите число y '))
+ z = int(input('Введите число z '))
 
+ a = x * y * z
+ b = x + y + z
 
-def checkCoordinates(xy):
-    text = 4
-    if xy[0] > 0 and xy[1] > 0:
-        text = 1
-    elif xy[0] < 0 and xy[1] > 0:
-        text = 2
-    elif xy[0] < 0 and xy[1] < 0:
-        text = 3
-    print(f"Точка находится в {text} четверти плоскости")
+if a > 0:
+     a = 0
+elif a < 1:
+     a = 1
+if b > 0:
+     b = 1
+elif b < 1:
+     b = 1
+if a == b:
+     print('Утверждение истинно')
+elif a != b:
+    print('Утверждение ложно')
 
-
-koordinate = inputKoord(2)
-checkCoordinates(koordinate)
+leftSide = not (x or y or z)
+rightSide = not x and not y and not z
+result = leftSide == rightSide
+if result == True:
+    print('Утверждение истинно')
+else:
+    print('Утверждение ложно')
