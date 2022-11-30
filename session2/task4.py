@@ -7,7 +7,3 @@ for i in range(people - 1):
     out_ind = (start_ind + count- 1) % len(list_people)
     list_people.remove(list_people[out_ind])
 print('Остался человек под номером', list_people[0])
-
-
-people_list[:count]
-people_list[count:]
